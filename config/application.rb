@@ -14,7 +14,7 @@ require "action_view/railtie"
 require "action_cable/engine"
 # require "rails/test_unit/railtie"
 
-# Require the gems listed in Gemfile, including any gems
+  # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
@@ -33,5 +33,8 @@ module InstaCloneVer7
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
   end
 end
