@@ -10,6 +10,7 @@ services:
       - 3001:3000
     depends_on:
       - db
+      - chrome
     stdin_open: true
     tty: true
     environment:
@@ -22,6 +23,8 @@ services:
       - 3307:3306
     volumes:
       - mysql_data:/var/lib/mysql
+  chrome:
+    image: selenium/standalone-chrome-debug:latest
 
 volumes:
   bundle:
