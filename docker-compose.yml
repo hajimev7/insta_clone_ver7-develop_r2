@@ -14,7 +14,7 @@ services:
     stdin_open: true
     tty: true
     environment:
-      SELENIUM_DRIVER_URL: http://chrome:4444/wd/hub
+      SELENIUM_DRIVER_URL: http://chrome:4445/wd/hub
   db:
     image: mysql:5.7.33
     environment:
@@ -25,6 +25,8 @@ services:
       - mysql_data:/var/lib/mysql
   chrome:
     image: selenium/standalone-chrome-debug:latest
+    ports:
+      - 4445:4444
 
 volumes:
   bundle:
